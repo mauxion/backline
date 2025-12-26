@@ -1,9 +1,6 @@
 import { Button, Badge } from "flowbite-react";
 
 export function Hero() {
-  const heroBg =
-    "card_bg.jpg";
-
   return (
     <section className="max-w-6xl mx-auto px-4 pt-10 pb-6">
       <div className="relative overflow-hidden rounded-2xl border border-gray-600 bg-base-950">

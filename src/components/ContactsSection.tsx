@@ -31,7 +31,7 @@ export function ContactsSection() {
 
           <div className="mt-4 flex gap-2">
             <Button color="blue" href="#equipment">Прайс</Button>
-            <Button color="gray" href="https://t.me/yourhandle" target="_blank">Написати</Button>
+            <Button color="gray" href="https://t.me/yourhandle" >Написати</Button>
           </div>
         </Card>
 
