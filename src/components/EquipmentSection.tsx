@@ -1,17 +1,30 @@
+import { Badge, Card, Pagination, Select, TabItem, Tabs, TextInput } from "flowbite-react";
+import { useEffect, useMemo, useState } from "react";
+import comboAmps from "../data/comboAmps.json";
+import cymbals from "../data/cymbals.json";
+import drumsGeneral from "../data/drumsGeneral.json";
 import equipment from "../data/equipment.json";
+import microphones from "../data/microphones.json";
+import snares from "../data/snares.json";
+import wireless from "../data/wireless.json";
+
 import type { EquipmentItem } from "../types/equipment";
-import { Card, Badge, TextInput } from "flowbite-react";
-import { useMemo, useState } from "react";
 
 function normalize(s: string) {
   return s.toLowerCase().trim();
 }
 
 export function EquipmentSection() {
-  const items = equipment as EquipmentItem[];
+  const items = [...comboAmps, ...cymbals, ...drumsGeneral, ...equipment, ...microphones, ...snares, ...wireless] as EquipmentItem[];
+
+  // ✅ змінюється лише в коді
+  const PAGE_SIZE = 4;
 
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeSubCategory, setActiveSubCategory] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   const categories = useMemo(() => {
     const set = new Set<string>();
@@ -19,67 +32,171 @@ export function EquipmentSection() {
     return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b, "uk"))];
   }, [items]);
 
+  const subCategories = useMemo(() => {
+    const set = new Set<string>();
+
+    items.forEach((i) => {
+      const matchesCat = activeCategory === "all" || i.category === activeCategory;
+      if (!matchesCat) return;
+      if (i.subCategory) set.add(i.subCategory);
+    });
+
+    return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b, "uk"))];
+  }, [items, activeCategory]);
+
+  // Коли змінюється категорія (tab) — скидаємо підкатегорію
+  useEffect(() => {
+    setActiveSubCategory("all");
+  }, [activeCategory]);
+
   const filtered = useMemo(() => {
     const q = normalize(query);
+
     return items.filter((i) => {
+      const matchesCat = activeCategory === "all" || i.category === activeCategory;
+      if (!matchesCat) return false;
+
+      const matchesSub =
+        activeSubCategory === "all" || i.subCategory === activeSubCategory;
+
+      const label = i.subCategory ?? i.category ?? "";
       const matchesQ =
         !q ||
         normalize(i.name).includes(q) ||
         normalize(i.comment).includes(q) ||
-        (i.category ? normalize(i.category).includes(q) : false);
+        (i.category ? normalize(i.category).includes(q) : false) ||
+        (i.subCategory ? normalize(i.subCategory).includes(q) : false) ||
+        (label ? normalize(label).includes(q) : false);
 
-      const matchesCat = category === "all" || i.category === category;
-      return matchesQ && matchesCat;
+      return matchesSub && matchesQ;
     });
-  }, [items, query, category]);
+  }, [items, activeCategory, activeSubCategory, query]);
+
+  // при зміні фільтрів — на 1-шу сторінку
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, activeSubCategory, query]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+
+  // якщо поточна сторінка стала невалідною
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+  }, [currentPage, totalPages]);
+
+  const paged = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filtered.slice(start, start + PAGE_SIZE);
+  }, [filtered, currentPage, PAGE_SIZE]);
 
   return (
-    <section id="equipment" className="max-w-6xl mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-4">
-        <div>
-          <h2 className="text-2xl font-bold text-white">Прайс та обладнання</h2>
-          <p className="text-sm text-gray-400">Редагуй все в <code>src/data/equipment.json</code></p>
+
+    <section id="equipment" className="max-w-6xl mx-auto px-4 pt-10 pb-6   ">
+      <div className="rounded-2xl border border-gray-600 dark:bg-gray-900/60 px-4 pt-10 pb-6  ">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-4">
+          <div>
+            <h2 className="text-2xl font-bold text-white">Прайс та обладнання</h2>
+
+          </div>
+
+          <div className="w-full md:w-[420px]">
+            <TextInput
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Пошук (XR18, барабани, maple...)"
+            />
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-2">
-          <TextInput
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Пошук (напр. XR18, барабани, maple...)"
-          />
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="rounded-lg border border-gray-700 bg-base-950 text-gray-200 px-3 py-2"
+        {/* Tabs (категорії) + Select (підкатегорії) */}
+        <div className="mb-4 equipment-tabs">
+          <Tabs
+            aria-label="Категорії обладнання"
+            onActiveTabChange={(idx) => setActiveCategory(categories[idx] ?? "all")}
+ 
           >
             {categories.map((c) => (
-              <option key={c} value={c}>
-                {c === "all" ? "Всі категорії" : c}
-              </option>
+              <TabItem
+              className="bg-red-500"
+                key={c}
+                title={c === "all" ? "Всі" : c}
+                active={c === activeCategory}
+              />
             ))}
-          </select>
-        </div>
-      </div>
+          </Tabs>
 
-      <div className="grid md:grid-cols-2 gap-4">
-        {filtered.map((i, idx) => (
-          <Card key={idx} className="bg-base-950 border-gray-800">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <div className="text-lg font-semibold text-white">{i.name}</div>
-                <div className="mt-1 flex flex-wrap gap-2">
-                  {i.category ? <Badge color="gray">{i.category}</Badge> : <Badge color="dark">інше</Badge>}
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-xl font-bold text-white">{i.price} грн</div>
-                <div className="text-xs text-gray-400">за 1 івент</div>
-              </div>
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div className="text-xs text-gray-400">
+              Показано: <span className="text-gray-200">{filtered.length}</span> •{" "}
+              Сторінка{" "}
+              <span className="text-gray-200">
+                {currentPage}/{totalPages}
+              </span>
             </div>
 
-            <p className="text-sm text-gray-300 mt-3">{i.comment}</p>
-          </Card>
-        ))}
+            {/* ✅ Select по subCategory */}
+            <div className="sm:w-[320px]">
+
+              <Select id="activeSubCategory"
+                value={activeSubCategory}
+                onChange={(e) => setActiveSubCategory(e.target.value)}
+                className=""
+                disabled={subCategories.length <= 1}
+                title={subCategories.length <= 1 ? "Немає підкатегорій для цього фільтра" : ""}
+              >
+                {subCategories.map((sc) => (
+                  <option key={sc} value={sc}>
+                    {sc === "all" ? "Всі підкатегорії" : sc}
+                  </option>
+                ))}
+              </Select>
+
+
+            </div>
+          </div>
+        </div>
+
+        {/* Список */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {paged.map((i, idx) => {
+            const badgeLabel = i.subCategory ?? i.category ?? "інше";
+
+            return (
+              <Card key={`${i.name}-${idx}`} className=" dark:bg-gray-900/40 backdrop-blur-sm shadow  border-gray-600">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="text-lg font-semibold text-white">{i.name}</div>
+
+                    {/* ✅ 1) показуємо subCategory якщо є, інакше category */}
+                    <div className="mt-1 flex flex-wrap gap-2">
+                      <Badge color="gray">{badgeLabel}</Badge>
+                    </div>
+
+                    {/* якщо хочеш бачити і category і subCategory, можна додати другим бейджем,
+                      але ти просив саме "замість" — тому лишив один */}
+                  </div>
+
+                  <div className="text-right">
+                    <div className="text-xl font-bold text-white">{i.price} $</div>
+                    <div className="text-xs text-gray-400">за 1 івент</div>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-300 mt-3">{i.comment}</p>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-6 flex items-center justify-center">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+            showIcons
+          />
+        </div>
       </div>
     </section>
   );

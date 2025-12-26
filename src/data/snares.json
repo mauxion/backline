@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Premier 2000 (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 10,
+    "comment": "14\"x5\", алюміній, extended\\parallel snares (flobeam)"
+  },
+  {
+    "name": "Premier 2004 (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 10,
+    "comment": "14\"x4\", дерево, extended\\parallel snares (flobeam)"
+  },
+  {
+    "name": "Pearl Free Floating (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 10,
+    "comment": "14\"x6.5\", латунь"
+  },
+  {
+    "name": "Yamaha Stage Custom (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 5,
+    "comment": "14\"x5.5\", дерево"
+  },
+  {
+    "name": "Tama Artwood Limited Edition (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 10,
+    "comment": "14\"x6.5\", клен"
+  },
+  {
+    "name": "Slingerland Radiking student (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 10,
+    "comment": "14\"x6\", вінтаж 1959го року, пластик calf-tone"
+  },
+  {
+    "name": "Ludwig Rocker Elite (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 5,
+    "comment": "13\"x3.5\", клен"
+  },
+  {
+    "name": "Tama Artwood Birch WTB1055M (snare)",
+    "category": "барабани",
+    "subCategory": "малий барабан",
+    "price": 5,
+    "comment": "10\"x6\", береза"
+  }
+]

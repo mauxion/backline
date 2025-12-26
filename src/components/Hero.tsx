@@ -2,14 +2,15 @@ import { Button, Badge } from "flowbite-react";
 
 export function Hero() {
   const heroBg =
-    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1800&q=80";
+    "card_bg.jpg";
 
   return (
     <section className="max-w-6xl mx-auto px-4 pt-10 pb-6">
-      <div className="relative overflow-hidden rounded-2xl border border-gray-800 bg-base-950">
+      <div className="relative overflow-hidden rounded-2xl border border-gray-600 bg-base-950">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-45"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-0 bg-cover bg-center bg-gray-900/60 backdrop-blur-sm shadow"
+
+        //style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/70 to-transparent" />
 

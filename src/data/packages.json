@@ -1,0 +1,52 @@
+[
+  {
+    "id": "basic",
+    "name": "BACKLINE BASIC",
+    "highlight": false,
+    "items": [
+      "Yamaha Birch Custom Absolute (shell pack)",
+      "Басовий комбо-підсилювач",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Стійка для клавіш / ф-но"
+    ],
+    "comment": "Базовий сет для гурту: барабани + бас + гитара + фоно + вокал + напольні монітори.",
+    "price": 600
+  },
+  {
+    "id": "mix",
+    "name": "BACKLINE + MIX",
+    "highlight": true,
+    "items": [
+      "Yamaha Birch Custom Absolute (shell pack)",
+      "Басовий комбо-підсилювач",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Стійка для клавіш / ф-но",
+      "Behringer XR18 Air",
+      "Комплект мікрофонів для барабанів"
+    ],
+    "comment": "BASIC + цифровий пульт + мікрофони для барабанів.",
+    "price": 500
+  },
+  {
+    "id": "iem",
+    "name": "FULL IEM BACKLINE",
+    "highlight": false,
+    "items": [
+      "Yamaha Birch Custom Absolute (shell pack)",
+      "Басовий комбо-підсилювач",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Shure Beta 58A (wired)",
+      "Стійка для клавіш / ф-но",
+      "Behringer XR18 Air",
+      "Комплект мікрофонів для барабанів",
+      "Дротовий IEM (до 6 музикантів)"
+    ],
+    "comment": "Повний сетап для живого виступу + моніторинг для гурту.",
+    "price": 800
+  }
+]
