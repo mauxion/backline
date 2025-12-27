@@ -132,24 +132,25 @@ export function EquipmentSection() {
             </div>
 
             {/* ✅ Select по subCategory */}
-            <div className="sm:w-[320px]">
 
-              <Select id="activeSubCategory"
-                value={activeSubCategory}
-                onChange={(e) => setActiveSubCategory(e.target.value)}
-                className=""
-                disabled={subCategories.length <= 1}
-                title={subCategories.length <= 1 ? "Немає підкатегорій для цього фільтра" : ""}
-              >
-                {subCategories.map((sc) => (
-                  <option key={sc} value={sc}>
-                    {sc === "all" ? "Всі підкатегорії" : sc}
-                  </option>
-                ))}
-              </Select>
+            {subCategories.length > 1 &&
+              <div className="sm:w-[320px]">
 
-
-            </div>
+                <Select id="activeSubCategory"
+                  value={activeSubCategory}
+                  onChange={(e) => setActiveSubCategory(e.target.value)}
+                  className=""
+                  disabled={subCategories.length <= 1}
+                  title={subCategories.length <= 1 ? "Немає підкатегорій для цього фільтра" : ""}
+                >
+                  {subCategories.map((sc) => (
+                    <option key={sc} value={sc}>
+                      {sc === "all" ? "Всі підкатегорії" : sc}
+                    </option>
+                  ))}
+                </Select>
+              </div>
+            }
           </div>
         </div>
 
@@ -191,19 +192,20 @@ export function EquipmentSection() {
           })}
         </div>
 
-        {/* Pagination */}
-        <div className="mt-6 flex items-center justify-center">
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-            previousLabel={orientation == "portrait" ? "" : "Назад"}
-            nextLabel={orientation == "portrait" ? "" : "Вперед"}
+        {totalPages > 1 &&
+          <div className="mt-6 flex items-center justify-center">
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              previousLabel={orientation == "portrait" ? "" : "Назад"}
+              nextLabel={orientation == "portrait" ? "" : "Вперед"}
 
 
-            showIcons
-          />
-        </div>
+              showIcons
+            />
+          </div>
+        }
       </div>
     </section>
   );

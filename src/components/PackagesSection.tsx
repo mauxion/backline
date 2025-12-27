@@ -1,8 +1,8 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { useMemo } from "react";
 
-import { equipment } from "../types/equipment";
 import packages from "../data/packages.json";
+import { equipment } from "../types/equipment";
 
 import type { EquipmentItem } from "../types/equipment";
 import type { PackageDef } from "../types/packages";
@@ -12,6 +12,7 @@ type ResolvedItem = {
   found: boolean;
   price?: number;
   category?: string;
+  amount?: number;
 };
 
 export function PackagesSection() {
@@ -26,23 +27,23 @@ export function PackagesSection() {
 
   const resolvedPackages = useMemo(() => {
     return packageDefs.map((p) => {
-      const resolved: ResolvedItem[] = p.items.map((name) => {
-        const it = equipmentByName.get(name);
-        if (!it) return { name, found: false };
+      const resolved: ResolvedItem[] = p.items.map((packageItem) => {
+        const it = equipmentByName.get(packageItem.name);
+        if (!it) return { "name": packageItem.name, found: false };
         return {
           name: it.name,
           found: true,
           price: it.price,
           category: it.category,
+          amount: it.amount
         };
-      });
+      }).sort((a, b) => ((b.price ?? 1) * (b.amount ?? 1)) - ((a.price ?? 1) * (a.amount ?? 1)));
 
       const total = resolved
         .filter((x) => x.found && typeof x.price === "number")
-        .reduce((sum, x) => sum + (x.price ?? 0), 0);
+        .reduce((sum, x) => sum + (x.price!! * (x.amount ?? 1)), 0);
 
       const missingCount = resolved.filter((x) => !x.found).length;
-
       return { ...p, resolved, total, missingCount };
     });
   }, [packageDefs, equipmentByName]);
@@ -65,7 +66,7 @@ export function PackagesSection() {
               : " border-gray-600");
 
             return (
-              <Card key={p.id} id= {'card'+p.id} className={cardClass}>
+              <Card key={p.id} id={'card' + p.id} className={cardClass}>
                 <div className="flex items-start justify-between gap-3  ">
                   <div>
                     <div className="text-sm text-gray-400">{p.name}</div>
@@ -74,7 +75,7 @@ export function PackagesSection() {
 
                   <div className="text-right">
                     <div className="text-xl font-bold text-white">
-                      {"$"+p.total}
+                      {"$" + p.total}
                     </div>
                     <div className="text-xs text-gray-400">за 1 івент</div>
                   </div>
@@ -92,13 +93,14 @@ export function PackagesSection() {
                     >
                       <div className="text-gray-200">
                         {it.found ? "• " : "⚠ "}
-                        {it.name.replace(/\([^)]*\)/g, "").trim()}  
+                        {it.amount != null && it.amount + "x "}
+                        {it.name.replace(/\([^)]*\)/g, "").trim()}
                         {it.category ? (
                           <span className="text-xs text-gray-500"> — {it.category}</span>
                         ) : null}
                       </div>
                       <div className="text-gray-300 font-medium">
-                        {it.found ? `$${it.price}` : "не знайдено"}
+                        {it.found ? `$${it.price!! * (it.amount ?? 1)}` : "не знайдено"}
                       </div>
                     </div>
                   ))}
