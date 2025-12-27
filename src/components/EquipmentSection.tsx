@@ -1,21 +1,15 @@
 import { Badge, Card, Pagination, Select, TabItem, Tabs, TextInput } from "flowbite-react";
 import { useEffect, useMemo, useState } from "react";
-import comboAmps from "../data/comboAmps.json";
-import cymbals from "../data/cymbals.json";
-import drumsGeneral from "../data/drumsGeneral.json";
-import equipment from "../data/equipment.json";
-import microphones from "../data/microphones.json";
-import snares from "../data/snares.json";
-import wireless from "../data/wireless.json";
 
-import type { EquipmentItem } from "../types/equipment";
+
+import { equipment } from "../types/equipment";
 
 function normalize(s: string) {
   return s.toLowerCase().trim();
 }
 
 export function EquipmentSection() {
-  const items = [...comboAmps, ...cymbals, ...drumsGeneral, ...equipment, ...microphones, ...snares, ...wireless] as EquipmentItem[];
+
 
   // ✅ змінюється лише в коді
   const PAGE_SIZE = 4;
@@ -28,21 +22,21 @@ export function EquipmentSection() {
 
   const categories = useMemo(() => {
     const set = new Set<string>();
-    items.forEach((i) => i.category && set.add(i.category));
+    equipment.forEach((i) => i.category && set.add(i.category));
     return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b, "uk"))];
-  }, [items]);
+  }, [equipment]);
 
   const subCategories = useMemo(() => {
     const set = new Set<string>();
 
-    items.forEach((i) => {
+    equipment.forEach((i) => {
       const matchesCat = activeCategory === "all" || i.category === activeCategory;
       if (!matchesCat) return;
       if (i.subCategory) set.add(i.subCategory);
     });
 
     return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b, "uk"))];
-  }, [items, activeCategory]);
+  }, [equipment, activeCategory]);
 
   // Коли змінюється категорія (tab) — скидаємо підкатегорію
   useEffect(() => {
@@ -52,7 +46,7 @@ export function EquipmentSection() {
   const filtered = useMemo(() => {
     const q = normalize(query);
 
-    return items.filter((i) => {
+    return equipment.filter((i) => {
       const matchesCat = activeCategory === "all" || i.category === activeCategory;
       if (!matchesCat) return false;
 
@@ -70,7 +64,7 @@ export function EquipmentSection() {
 
       return matchesSub && matchesQ;
     });
-  }, [items, activeCategory, activeSubCategory, query]);
+  }, [equipment, activeCategory, activeSubCategory, query]);
 
   // при зміні фільтрів — на 1-шу сторінку
   useEffect(() => {
@@ -113,11 +107,11 @@ export function EquipmentSection() {
           <Tabs
             aria-label="Категорії обладнання"
             onActiveTabChange={(idx) => setActiveCategory(categories[idx] ?? "all")}
- 
+
           >
             {categories.map((c) => (
               <TabItem
-              className="bg-red-500"
+                className="bg-red-500"
                 key={c}
                 title={c === "all" ? "Всі" : c}
                 active={c === activeCategory}
@@ -172,13 +166,19 @@ export function EquipmentSection() {
                       <Badge color="gray">{badgeLabel}</Badge>
                     </div>
 
-                    {/* якщо хочеш бачити і category і subCategory, можна додати другим бейджем,
-                      але ти просив саме "замість" — тому лишив один */}
+          
                   </div>
 
                   <div className="text-right">
-                    <div className="text-xl font-bold text-white">{i.price} $</div>
-                    <div className="text-xs text-gray-400">за 1 івент</div>
+                    <div className="text-xl font-bold text-white">{'$'+i.price}</div>
+
+                    {(i.amount ?? 1) > 1 &&
+                      <>
+                        <div className="text-xs text-gray-400">за 1 шт.</div>
+                        <div className="text-xs text-gray-400">наявність: {i.amount}</div>
+                      </>
+                    }
+
                   </div>
                 </div>
 

@@ -3,28 +3,14 @@
     "name": "Yamaha Birch Custom Absolute (shell pack)",
     "category": "барабани",
     "subCategory": "барабанна установка",
-    "price": 2500,
+    "price": 100,
     "comment": "Колір: cherry-wood. Бас: 22\". Томи можливі: 8\", 10\", 12\", 14\", 16\" (уточнюється під івент)."
   },
   {
-    "name": "NordicShells custom (concert toms)",
+    "name": "Барабанна установка NordicShells 20\"\\10\"\\13\"\\16\"",
     "category": "барабани",
     "subCategory": "барабанна установка",
-    "price": 3000,
+    "price": 50,
     "comment": "Колір: natural maple. Бас: 20\". Томи: 10\", 13\", 16\". Концерт-томи (без нижніх пластиків)."
-  },
-  {
-    "name": "Комплект хардверу для барабанів",
-    "category": "барабани",
-    "subCategory": "хард для барабанів",
-    "price": 1000,
-    "comment": "Стійки, педаль, стілець (по наявності/комплектації)."
-  },
-  {
-    "name": "Барабанні тарілки (basic set)",
-    "category": "барабани",
-    "subCategory": "набір тарілок",
-    "price": 1200,
-    "comment": "Hi-hat + crash + ride (склад і бренди узгоджуються)."
   }
 ]

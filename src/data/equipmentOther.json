@@ -2,39 +2,54 @@
   {
     "name": "Behringer XR18 Air",
     "category": "мікшерний пульт",
-    "price": 1400,
+    "price": 25,
     "comment": "Цифровий мікшер/стейджбокс 18 in / 18 out. Ідеально для невеликих сцен і IEM."
   },
   {
     "name": "Behringer X32 Rack",
     "category": "мікшерний пульт",
-    "price": 2200,
+    "price": 50,
     "comment": "Проф. рековий пульт/стейджбокс. Більше можливостей по міксам/шинам."
   },
   {
     "name": "Yamaha MW8CX",
     "category": "мікшерний пульт",
-    "price": 500,
+    "price": 5,
     "comment": "Компактний аналоговий мікшер для малих задач/репетицій/подкастів."
-  },   
+  },
+  {
+    "name": "Стійка для клавіш / ф-но",    
+    "price": 3,
+    "comment": ""
+  },
   {
     "name": "D.A.S. Audio DR 515A",
     "category": "портали",
     "price": 40,
-    "comment": "500 Вт, 15\", 131 dB"
+    "comment": "500 Вт, 15\", 131 dB",
+    "amount": 2
   },
   {
-    "name": "HH Electronics VRE-8AG2",
+    "name": "HH ELECTRONICS VRE-8AG2",
     "category": "портали",
     "price": 10,
-    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт"
+    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт",
+    "amount": 2
   },
   {
     "name": "HH Electronics VRE-8AG2",
     "category": "моніторинг",
     "subCategory": "напольні монітори",
     "price": 10,
-    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт"
+    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт",
+    "amount": 2
+  },
+  {
+    "name": "Rolls PM55",
+    "category": "моніторинг",
+    "subCategory": "підсилювач для навушників",
+    "price": 4,
+    "comment": " Двухканальний преамп для навушників в функціюєю \"pass through\". Ідеально підходиться для персонального моніторингу барабанщиків та вокалістів"
   },
   {
     "name": "Дротовий IEM (до 6 музикантів)",

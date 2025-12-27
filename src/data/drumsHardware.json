@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Комплект хардверу для барабанів",
+    "category": "барабани",
+    "subCategory": "хард для барабанів",
+    "price": 20,
+    "comment": "Стійка хета, 2хстійка тарілок, стійка snare, педаль ВВ, стілець."
+  },
+  {
+    "name": "Подвійна педаль Yamaha DFP-880",
+    "category": "барабани",
+    "subCategory": "хард для барабанів",
+    "price": 5,
+    "comment": ""
+  },
+  {
+    "name": "Педаль Yamaha FP-7210",
+    "category": "барабани",
+    "subCategory": "хард для барабанів",
+    "price": 2,
+    "comment": ""
+  },
+  {
+    "name": "Стілець DW9000 round",
+    "category": "барабани",
+    "subCategory": "хард для барабанів",
+    "price": 5,
+    "comment": ""
+  },
+  {
+    "name": "Стілець Tama 1st chair moto",
+    "category": "барабани",
+    "subCategory": "хард для барабанів",
+    "price": 5,
+    "comment": ""
+  }
+]

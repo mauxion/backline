@@ -1,5 +1,12 @@
 [
   {
+    "name": "Барабанні тарілки (basic set)",
+    "category": "барабани",
+    "subCategory": "набір тарілок",
+    "price": 20,
+    "comment": "Hi-hat + crash + ride (склад і бренди узгоджуються)."
+  },
+  {
     "name": "Sabian Hand Hammered Raw Bell Dry Ride 21\"",
     "category": "барабани",
     "subCategory": "барабанна тарілка",
@@ -33,7 +40,6 @@
     "subCategory": "барабанна тарілка",
     "price": 10,
     "comment": ""
- 
   },
   {
     "name": "Sabian AA French Orchestral Crash 18\"",

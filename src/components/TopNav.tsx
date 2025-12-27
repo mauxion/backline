@@ -5,7 +5,7 @@ export function TopNav() {
     <Navbar fluid rounded className="w-full border-b border-gray-800 dark:bg-gray-950/60 backdrop-blur-sm shadow">
       <div className="max-w-6xl w-full mx-auto px-4 py-1 flex items-center justify-between">
         <NavbarBrand href="#">
-          <img src="/Logo_small.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+          <img src="/Logo_small.png" className="mr-3 h-6 sm:h-9" alt="" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Backline.com.ua</span>
 
         </NavbarBrand>

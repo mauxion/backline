@@ -1,52 +1,50 @@
 [
   {
     "id": "basic",
-    "name": "BACKLINE BASIC",
+    "name": "Small gig",
     "highlight": false,
     "items": [
-      "Yamaha Birch Custom Absolute (shell pack)",
-      "Басовий комбо-підсилювач",
+      "Барабанна установка NordicShells 20\"\\10\"\\13\"\\16\"",
+      "Комплект хардверу для барабанів",
+      "Phil Jones Double Four BG-75",
       "Shure Beta 58A (wired)",
-      "Shure Beta 58A (wired)",
-      "Shure Beta 58A (wired)",
+      "HH ELECTRONICS VRE-8AG2",
       "Стійка для клавіш / ф-но"
     ],
-    "comment": "Базовий сет для гурту: барабани + бас + гитара + фоно + вокал + напольні монітори.",
-    "price": 600
+    "comment": "Базовий сет для виступу в маленькому приміщенні: барабани + бас + фоно + вокал + невеликі портали."
   },
   {
     "id": "mix",
-    "name": "BACKLINE + MIX",
+    "name": "Backline only",
     "highlight": true,
     "items": [
-      "Yamaha Birch Custom Absolute (shell pack)",
-      "Басовий комбо-підсилювач",
+      "Барабанна установка NordicShells 20\"\\10\"\\13\"\\16\"",
+      "Комплект хардверу для барабанів",
+      "Комплект мікрофонів для барабанів",
+      "Ampeg BA 300-210",
+      "Peavery Bandit 112",
+      "AKG WMS 420 Vocal Set (wireless)",
       "Shure Beta 58A (wired)",
-      "Shure Beta 58A (wired)",
-      "Shure Beta 58A (wired)",
-      "Стійка для клавіш / ф-но",
-      "Behringer XR18 Air",
-      "Комплект мікрофонів для барабанів"
+      "HH Electronics VRE-8AG2",
+      "Стійка для клавіш / ф-но"
     ],
-    "comment": "BASIC + цифровий пульт + мікрофони для барабанів.",
-    "price": 500
+    "comment": "BASIC + цифровий пульт + мікрофони для барабанів."
   },
   {
     "id": "iem",
-    "name": "FULL IEM BACKLINE",
+    "name": "Full IEM Set",
     "highlight": false,
     "items": [
       "Yamaha Birch Custom Absolute (shell pack)",
-      "Басовий комбо-підсилювач",
-      "Shure Beta 58A (wired)",
-      "Shure Beta 58A (wired)",
+      "Комплект хардверу для барабанів",
+      "Комплект мікрофонів для барабанів",
+      "AKG WMS 420 Vocal Set (wireless)",
       "Shure Beta 58A (wired)",
       "Стійка для клавіш / ф-но",
       "Behringer XR18 Air",
-      "Комплект мікрофонів для барабанів",
-      "Дротовий IEM (до 6 музикантів)"
+      "Дротовий IEM (до 6 музикантів)",
+      "D.A.S. Audio DR 515A"
     ],
-    "comment": "Повний сетап для живого виступу + моніторинг для гурту.",
-    "price": 800
+    "comment": "Повний сетап для живого виступу + моніторинг для гурту."
   }
 ]

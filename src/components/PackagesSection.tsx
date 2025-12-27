@@ -1,7 +1,7 @@
 import { Badge, Button, Card } from "flowbite-react";
 import { useMemo } from "react";
 
-import equipment from "../data/equipment.json";
+import { equipment } from "../types/equipment";
 import packages from "../data/packages.json";
 
 import type { EquipmentItem } from "../types/equipment";
@@ -15,14 +15,14 @@ type ResolvedItem = {
 };
 
 export function PackagesSection() {
-  const equipmentItems = equipment as EquipmentItem[];
+
   const packageDefs = packages as PackageDef[];
 
   const equipmentByName = useMemo(() => {
     const map = new Map<string, EquipmentItem>();
-    for (const it of equipmentItems) map.set(it.name, it);
+    for (const it of equipment) map.set(it.name, it);
     return map;
-  }, [equipmentItems]);
+  }, [equipment]);
 
   const resolvedPackages = useMemo(() => {
     return packageDefs.map((p) => {
@@ -59,14 +59,14 @@ export function PackagesSection() {
 
         <div className="grid md:grid-cols-3 gap-4">
           {resolvedPackages.map((p) => {
-            const base = " dark:bg-gray-900/40 backdrop-blur-sm shadow "
+            const base = " dark:bg-gray-900/40 h-fit backdrop-blur-sm shadow  "
             const cardClass = base + (p.highlight
               ? " border-blue-600/40"
               : " border-gray-600");
 
             return (
-              <Card key={p.id} className={cardClass}>
-                <div className="flex items-start justify-between gap-3 ">
+              <Card key={p.id} id= {'card'+p.id} className={cardClass}>
+                <div className="flex items-start justify-between gap-3  ">
                   <div>
                     <div className="text-sm text-gray-400">{p.name}</div>
                     {p.highlight ? <Badge color="info" className="mt-2">Рекомендовано</Badge> : null}
@@ -74,7 +74,7 @@ export function PackagesSection() {
 
                   <div className="text-right">
                     <div className="text-xl font-bold text-white">
-                      {p.total} грн
+                      {"$"+p.total}
                     </div>
                     <div className="text-xs text-gray-400">за 1 івент</div>
                   </div>
@@ -98,7 +98,7 @@ export function PackagesSection() {
                         ) : null}
                       </div>
                       <div className="text-gray-300 font-medium">
-                        {it.found ? `${it.price} $` : "не знайдено"}
+                        {it.found ? `$${it.price}` : "не знайдено"}
                       </div>
                     </div>
                   ))}

@@ -3,6 +3,5 @@ export type PackageDef = {
   name: string;
   highlight?: boolean;
   items: string[]; // список назв equipment.name
-  comment?: string;
-  price: number;
+  comment?: string; 
 };

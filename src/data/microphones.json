@@ -2,45 +2,73 @@
   {
     "name": "Shure Beta 58A (wired)",
     "category": "мікрофон",
-    "price": 250,
-    "comment": "Вокальний дротовий. Ціна за 1 шт. Кабель/стійка — за домовленістю."
+    "price": 10,
+    "comment": "Вокальний дротовий. Кабель/стійка — за домовленістю",
+    "amount": 2
   },
   {
     "name": "AKG WMS 420 Vocal Set (wireless)",
     "category": "мікрофон",
-    "price": 600,
+    "price": 10,
     "comment": "Вокальний радіомікрофон (сет)."
   },
   {
     "name": "Комплект мікрофонів для барабанів",
     "category": "мікрофон",
-    "price": 800,
+    "price": 20,
     "comment": "Бочка/малий/томи/овер-хеди. Склад комплекту узгоджується."
   },
   {
-    "name": "D.A.S. Audio DR 515A",
-    "category": "портали",
-    "price": 40,
-    "comment": "500 Вт, 15\", 131 dB"
-  },
-  {
-    "name": "HH Electronics VRE-8AG2",
-    "category": "портали",
+    "name": "shure sm57",
+    "category": "мікрофон",
     "price": 10,
-    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт"
+    "comment": "Вокал\\барабани"
   },
   {
-    "name": "HH Electronics VRE-8AG2",
-    "category": "моніторинг",
-    "subCategory": "напольні монітори",
+    "name": "shure Beta52a",
+    "category": "мікрофон",
     "price": 10,
-    "comment": " 8\" + 1\", потужність (Peak @1m) - 300 Вт"
+    "comment": "Бас барабан\\басовий комбік"
   },
   {
-    "name": "Дротовий IEM (до 6 музикантів)",
-    "category": "моніторинг",
-    "subCategory": "комплект моніторингу",
-    "price": 30,
-    "comment": "Хедфонні підсилювачі + кабелі (навушники за домовленістю)."
+    "name": "AKG D112",
+    "category": "мікрофон",
+    "price": 10,
+    "comment": "Бас барабан\\басовий комбік"
+  },
+  {
+    "name": "sennheiser e604",
+    "category": "мікрофон",
+    "price": 10,
+    "comment": "том\\малий барабан",
+    "amount": 6
+  },
+  {
+    "name": "AKG c1000s",
+    "category": "мікрофон",
+    "price": 10,
+    "comment": "оверхед",
+    "amount": 2
+  },
+  {
+    "name": "Shure SM81",
+    "category": "мікрофон",
+    "price": 20,
+    "comment": "оверхед",
+    "amount": 2
+  },
+  {
+    "name": "Rode NT1A",
+    "category": "мікрофон",
+    "price": 10,
+    "comment": "Конденсаторний мікрофон для студійного запису вокалу",
+    "amount": 2
+  },
+  {
+    "name": "Solomon SubKick LoFReQ",
+    "category": "мікрофон",
+    "price": 10,
+    "comment": "Для запису низьких частот бас барабану",
+    "amount": 2
   }
 ]

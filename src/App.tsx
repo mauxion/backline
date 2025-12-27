@@ -13,7 +13,7 @@ export default function App() {
       <EquipmentSection />
       <ContactsSection />
 
-      <footer className="border-t border-gray-800 dark:bg-gray-950/60 backdrop-blur-sm shadow border-gray-800 py-6">
+      <footer className="border-t border-gray-800 dark:bg-gray-950/60 backdrop-blur-sm shadow border-gray-800 py-3">
         <div className="max-w-6xl mx-auto px-4 text-xs text-gray-500 flex justify-between gap-2">
           <span>© {new Date().getFullYear()} backline.com.ua</span>
           <span>Backline • Live Sound • IEM</span>
