@@ -34,7 +34,7 @@ export function PackagesSection() {
           name: it.name,
           found: true,
           price: it.price,
-          category: it.category,
+          category: it.subCategory ?? it.category,
           amount: it.amount
         };
       }).sort((a, b) => ((b.price ?? 1) * (b.amount ?? 1)) - ((a.price ?? 1) * (a.amount ?? 1)));
@@ -69,7 +69,7 @@ export function PackagesSection() {
               <Card key={p.id} id={'card' + p.id} className={cardClass}>
                 <div className="flex items-start justify-between gap-3  ">
                   <div>
-                    <div className="text-sm text-gray-400">{p.name}</div>
+                    <div className="text-xl text-gray-400">{p.name}</div>
                     {p.highlight ? <Badge color="info" className="mt-2">Рекомендовано</Badge> : null}
                   </div>
 

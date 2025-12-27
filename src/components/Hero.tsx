@@ -4,11 +4,7 @@ export function Hero() {
   return (
     <section className="max-w-6xl mx-auto px-4 pt-10 pb-6">
       <div className="relative overflow-hidden rounded-2xl border border-gray-600 bg-base-950">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-gray-900/60 backdrop-blur-sm shadow"
-
-        //style={{ backgroundImage: `url(${heroBg})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-gray-900/60 backdrop-blur-sm shadow" />
         <div className="absolute inset-0 bg-gradient-to-r from-base-950 via-base-950/70 to-transparent" />
 
         <div className="relative p-6 md:p-10">
@@ -22,8 +18,8 @@ export function Hero() {
             backline.com.ua — оренда беклайну та звуку для концертів
           </h1>
           <p className="text-gray-300 mt-3 max-w-2xl">
-            Барабани (включно з кастомними), мікшери XR18 / X32 Rack, мікрофони,
-            комплект барабанних мікрофонів та дротовий IEM до 6 музикантів.
+            Прокат музичного обладнання для проведення концертів.<br />
+            Оренда звуку, світла, інструментів та обладнання. Поканальний запис концерту та багато іншого!
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">

@@ -1,72 +1,72 @@
 [
   {
     "name": "Shure Beta 58A (wired)",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Вокальний дротовий. Кабель/стійка — за домовленістю",
     "amount": 2
   },
   {
     "name": "AKG WMS 420 Vocal Set (wireless)",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Вокальний радіомікрофон (сет)."
   },
   {
     "name": "Комплект мікрофонів для барабанів",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 20,
     "comment": "Бочка/малий/томи/овер-хеди. Склад комплекту узгоджується."
   },
   {
     "name": "shure sm57",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Вокал\\барабани"
   },
   {
     "name": "shure Beta52a",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Бас барабан\\басовий комбік"
   },
   {
     "name": "AKG D112",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Бас барабан\\басовий комбік"
   },
   {
     "name": "sennheiser e604",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "том\\малий барабан",
     "amount": 6
   },
   {
     "name": "AKG c1000s",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "оверхед",
     "amount": 2
   },
   {
     "name": "Shure SM81",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 20,
     "comment": "оверхед",
     "amount": 2
   },
   {
     "name": "Rode NT1A",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Конденсаторний мікрофон для студійного запису вокалу",
     "amount": 2
   },
   {
     "name": "Solomon SubKick LoFReQ",
-    "category": "мікрофон",
+    "category": "мікрофони",
     "price": 10,
     "comment": "Для запису низьких частот бас барабану",
     "amount": 2

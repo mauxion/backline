@@ -1,23 +1,23 @@
 [
   {
     "name": "Ampeg BA 300-210",
-    "category": "комбік",
-    "subCategory": "басовий комбік",
+    "category": "комбопідсилювачі",
+    "subCategory": "басовий комбопідсилювач",
     "price": 20,
     "comment": "300 Ватт, 2 x 10\""
   },
   {
     "name": "Peavery Bandit 112",
-    "category": "комбік",
-    "subCategory": "гитарний комбік",
+    "category": "комбопідсилювачі",
+    "subCategory": "гитарний комбопідсилювач",
     "price": 20,
     "comment": "потужність 80 Ватт, 1х12\""
   },
   {
     "name": "Phil Jones Double Four BG-75",
-    "category": "комбік",
-    "subCategory": "басовий комбік",
+    "category": "комбопідсилювачі",
+    "subCategory": "басовий комбопідсилювач",
     "price": 15,
-    "comment": "75 Ватт, 2 x 14\", ультра-компактний розмір"
+    "comment": "75 Ватт, 2 x 4\", ультра-компактний розмір"
   }
 ]
