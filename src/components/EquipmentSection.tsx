@@ -174,7 +174,7 @@ export function EquipmentSection() {
 
                     {(i.amount ?? 1) > 1 &&
                       <>
-                        <div className="text-xs text-gray-400">за 1 шт.</div>
+                        <div className="text-xs text-gray-400">ціна за 1 шт.</div>
                         <div className="text-xs text-gray-400">наявність: {i.amount}</div>
                       </>
                     }

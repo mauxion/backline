@@ -12,7 +12,8 @@ body {
 }
 
 body {
-  background-image: url("/bg.jpg");
+  /* background-image: url("/bg.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/bg.jpg");
   background-size: cover;
   /* заповнює весь екран */
   background-position: center;
@@ -23,6 +24,63 @@ body {
   /* ❗ фон НЕ скролиться */
 }
 
+@keyframes animation-content {
+  0% {
+    filter: opacity(0.0);
+  }
+
+  10% {
+    filter: opacity(0.1);
+    ;
+  }
+
+  20% {
+    filter: opacity(0.15);
+  }
+
+  30% {
+    filter: opacity(0.20);
+  }
+
+  40% {
+    filter: opacity(0.25);
+  }
+
+  50% {
+    filter: opacity(0.30);
+  }
+
+  60% {
+    filter: opacity(0.35);
+  }
+
+  70% {
+    filter: opacity(0.40);
+  }
+
+  80% {
+    filter: opacity(0.50);
+  }
+
+  85% {
+    filter: opacity(0.7);
+  }  
+
+  90% {
+    filter: opacity(0.8);
+  }
+
+  95% {
+    filter: opacity(0.9);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+
+.animated-content {
+  animation: animation-content 1s ease-in-out;  
+}
 
 #_r_0_-tabpanel-0,
 #_r_0_-tabpanel-1,
@@ -64,16 +122,16 @@ body {
 .equipment-tabs [role="tab"][aria-selected="true"] {
   /* background: rgba(59, 130, 246, 0.18); */
   /* background: rgba(97, 103, 116, 0.65);  */
- background: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+  background: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 
 }
 
 
 .equipment-tabs [role="tab"]:not([aria-selected="true"]) {
-  background: rgba(17, 24, 39, 0.65); 
+  background: rgba(17, 24, 39, 0.65);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(10px);
- 
+
 
 }
 

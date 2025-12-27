@@ -2,7 +2,7 @@
   {
     "name": "AKG WMS 420 Vocal Set (wireless)",
     "category": "радіо",
-    "subCategory": "радіо-міфкрофон",
+    "subCategory": "радіо-мікрофон",
     "price": 10,
     "comment": "Вокальний радіомікрофон (сет)."
   },
@@ -16,8 +16,15 @@
   {
     "name": "AKG WMS40 PRO Mini Press Set ",
     "category": "радіо",
-    "subCategory": "радіо-міфкрофон",
+    "subCategory": "радіо-мікрофон",
     "price": 15,
     "comment": "Вокальний радіомікрофон для презентацій (одягається на голову)"
+  },
+  {
+    "name": "Nux B-7PSM",
+    "category": "радіо",
+    "subCategory": "радіо-моніторинг",
+    "price": 10,
+    "comment": "Бездротова система персонального моніторингу"
   }
 ]
