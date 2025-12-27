@@ -92,7 +92,7 @@ export function PackagesSection() {
                     >
                       <div className="text-gray-200">
                         {it.found ? "• " : "⚠ "}
-                        {it.name}
+                        {it.name.replace(/\([^)]*\)/g, "").trim()}  
                         {it.category ? (
                           <span className="text-xs text-gray-500"> — {it.category}</span>
                         ) : null}

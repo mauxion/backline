@@ -8,6 +8,9 @@ function normalize(s: string) {
   return s.toLowerCase().trim();
 }
 
+
+const orientation: "landscape" | "portrait" = window.innerWidth > window.innerHeight ? "landscape" : "portrait"
+
 export function EquipmentSection() {
 
 
@@ -166,11 +169,11 @@ export function EquipmentSection() {
                       <Badge color="gray">{badgeLabel}</Badge>
                     </div>
 
-          
+
                   </div>
 
                   <div className="text-right">
-                    <div className="text-xl font-bold text-white">{'$'+i.price}</div>
+                    <div className="text-xl font-bold text-white">{'$' + i.price}</div>
 
                     {(i.amount ?? 1) > 1 &&
                       <>
@@ -194,6 +197,10 @@ export function EquipmentSection() {
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={setCurrentPage}
+            previousLabel={orientation == "portrait" ? "" : "Назад"}
+            nextLabel={orientation == "portrait" ? "" : "Вперед"}
+
+
             showIcons
           />
         </div>
