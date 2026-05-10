@@ -6,6 +6,8 @@ import other from "../data/equipmentOther.json";
 import microphones from "../data/microphones.json";
 import snares from "../data/snares.json";
 import wireless from "../data/wireless.json";
+import amps from "../data/amps.json";
+import cabinets from "../data/cabinets.json";
 export type EquipmentItem = {
   name: string;
   category?: string;
@@ -23,4 +25,6 @@ export const equipment = [
   ...other,
   ...microphones,
   ...snares,
-  ...wireless] as EquipmentItem[];
+  ...wireless,
+  ...amps,
+  ...cabinets] as EquipmentItem[];

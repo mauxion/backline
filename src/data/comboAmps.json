@@ -3,8 +3,15 @@
     "name": "Ampeg BA 300-210",
     "category": "комбопідсилювачі",
     "subCategory": "басовий комбопідсилювач",
-    "price": 20,
+    "price": 40,
     "comment": "300 Ватт, 2 x 10\""
+  },
+  {
+    "name": "Warwick Gnome i Pro V2 + Phil Jones C-2",
+    "category": "комбопідсилювачі",
+    "subCategory": "басовий комбопідсилювач",
+    "price": 30,
+    "comment": "180 Ватт, 2 x 5\""
   },
   {
     "name": "Peavery Bandit 112",
