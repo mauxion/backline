@@ -3,6 +3,7 @@ import { useMemo } from "react";
 
 import packages from "../data/packages.json";
 import { equipment } from "../types/equipment";
+import { formatPrice } from "../utils/currency";
 
 import type { EquipmentItem } from "../types/equipment";
 import type { PackageDef } from "../types/packages";
@@ -75,7 +76,7 @@ export function PackagesSection() {
 
                   <div className="text-right">
                     <div className="text-xl font-bold text-white">
-                      {"$" + p.total}
+                      {formatPrice(p.total)}
                     </div>
                     <div className="text-xs text-gray-400">за 1 івент</div>
                   </div>
@@ -100,7 +101,7 @@ export function PackagesSection() {
                         ) : null}
                       </div>
                       <div className="text-gray-300 font-medium">
-                        {it.found ? `$${it.price!! * (it.amount ?? 1)}` : "не знайдено"}
+                        {it.found ? formatPrice(it.price!! * (it.amount ?? 1)) : "не знайдено"}
                       </div>
                     </div>
                   ))}

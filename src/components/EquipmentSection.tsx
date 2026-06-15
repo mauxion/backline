@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 
 
 import { equipment } from "../types/equipment";
+import { formatPrice } from "../utils/currency";
 
 function normalize(s: string) {
   return s.toLowerCase().trim();
@@ -174,7 +175,7 @@ export function EquipmentSection() {
                   </div>
 
                   <div className="text-right">
-                    <div className="text-xl font-bold text-white">{'$' + i.price}</div>
+                    <div className="text-xl font-bold text-white">{formatPrice(i.price)}</div>
 
                     {(i.amount ?? 1) > 1 &&
                       <>
